@@ -37,7 +37,7 @@ menuMobile.init();
 const funcionamento = new Funcionamento('[data-semana]', 'aberto');
 funcionamento.init();
 
-fetchAnimais('../../animaispi.json', '.numeros-grid');
+fetchAnimais('./animaispi.json', '.numeros-grid');
 
 
 fetchBitcoin('https://blockchain.info/ticker', 'btc-preso');
