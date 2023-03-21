@@ -4,7 +4,7 @@ export default class Funcionamento {
     this.activeClass = activeClass;
   }
 
-  dadosFunionamentos() {
+  dadosFuncionamento() {
     this.diasSemana = this.funcionamento.dataset.semana.split(',').map(Number);
     this.horarioSemana = this.funcionamento.dataset.horario.split(',').map(Number);
   }
@@ -12,7 +12,7 @@ export default class Funcionamento {
   dadosAgora() {
     this.dataAgora = new Date();
     this.diaAgora = this.dataAgora.getDay();
-    this.horarioAgora = this.dataAgora.getUTHours() - 3;
+    this.horarioAgora = this.dataAgora.getUTCHours() - 3;
   }
 
   estaAberto() {
@@ -24,15 +24,16 @@ export default class Funcionamento {
 
   ativaAberto() {
     if (this.estaAberto()) {
-      this.dadosFunionamentos();
-      this.dadosAgora();
       this.funcionamento.classList.add(this.activeClass);
     }
   }
 
   init() {
     if (this.funcionamento) {
+      this.dadosFuncionamento();
+      this.dadosAgora();
       this.ativaAberto();
     }
+    return this;
   }
 }
