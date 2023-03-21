@@ -5,7 +5,7 @@ export default class Modal {
     this.containerModal = document.querySelector(containerModal);
 
     // bind this ao callback para
-    // fazer referência ao objeito
+    // fazer referência ao objeto
     // da classe
     this.eventToggleModal = this.eventToggleModal.bind(this);
     this.cliqueForaModal = this.cliqueForaModal.bind(this);
@@ -16,13 +16,13 @@ export default class Modal {
     this.containerModal.classList.toggle('ativo');
   }
 
-  // adidciona o evento de toggle ao modal
+  // adiciona o evento de toggle ao modal
   eventToggleModal(event) {
     event.preventDefault();
     this.toggleModal();
   }
 
-  // fecha o modal ao clicar ao lado de fora
+  // fecha o modal ao clicar do lado de fora
   cliqueForaModal(event) {
     if (event.target === this.containerModal) {
       this.toggleModal();

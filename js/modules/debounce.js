@@ -1,7 +1,7 @@
 export default function debounce(callback, delay) {
   let timer;
   return (...args) => {
-    if (timer) clearImmediate(timer);
+    if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
       callback(...args);
       timer = null;
